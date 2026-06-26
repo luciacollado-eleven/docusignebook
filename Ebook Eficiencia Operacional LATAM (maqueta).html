@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ebook · La era de la gestión inteligente de acuerdos</title>
+<style>
+  :root{
+    --ink:#0a0a0a;--paper:#ffffff;--body:#3a3a3c;--muted:#8a8a8e;--line:#e4e4e7;
+    --lime:#cbfb45;--lime-deep:#b6e635;--blue:#1a6bb5;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:#52525b;font-family:Helvetica,Arial,"Segoe UI",sans-serif;color:var(--body);line-height:1.5;padding:32px 16px 56px}
+  .viewer{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+  .page{background:var(--paper);border-radius:3px;box-shadow:0 12px 40px rgba(0,0,0,.35);padding:60px 60px 48px;position:relative;min-height:880px;display:flex;flex-direction:column}
+  @media(max-width:660px){ .page{padding:34px 24px 40px;min-height:0} body{padding:16px 8px 36px} }
+
+  .cover{background:var(--ink);color:#fff;min-height:960px;padding:54px 54px 60px}
+  .cover .wm{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
+  .wordmark{font-weight:800;font-size:21px;letter-spacing:-.5px;color:#fff}
+  .wordmark .reg{font-size:9px;vertical-align:super;font-weight:600;opacity:.8}
+  .tag{font-weight:800;font-size:18px}
+  .cover h1{font-size:clamp(36px,7vw,66px);line-height:1.0;letter-spacing:-1.8px;font-weight:800;color:#fff;margin:40px 0 0;text-wrap:balance;max-width:12ch}
+  .cover .sub{margin-top:26px;font-size:clamp(15px,2.2vw,20px);color:#d4d4d8;max-width:34ch;line-height:1.35}
+  .cover .countries{margin-top:34px;display:inline-flex;gap:9px;flex-wrap:wrap}
+  .cover .countries span{font-size:12px;font-weight:700;color:var(--ink);background:var(--lime);padding:6px 12px;border-radius:100px}
+  .cover .dl{margin-top:auto;align-self:flex-end;width:56px;height:56px;border-radius:8px;background:var(--lime);display:flex;align-items:center;justify-content:center}
+  .cover .dl svg{width:25px;height:25px}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+  .topbar .wordmark{color:var(--ink)}
+  .topbar .wordmark .reg{opacity:.55}
+  .eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+
+  p{margin:0 0 14px;font-size:15px;max-width:62ch}
+  p strong{color:var(--ink);font-weight:700}
+  a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(26,107,181,.35)}
+  a:hover{border-bottom-color:var(--blue)}
+  a:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:2px}
+
+  .opener{display:grid;grid-template-columns:120px 1fr;gap:34px;align-items:start;margin-bottom:30px}
+  .opener .rail{padding-top:8px}
+  .opener .rail .cap{font-size:12px;font-weight:800;color:var(--ink);letter-spacing:.3px}
+  .opener .rail .capnum{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:100px;background:var(--lime);color:var(--ink);font-weight:800;font-size:16px;margin-bottom:10px}
+  .opener h2{font-size:clamp(30px,5.4vw,52px);line-height:1.02;letter-spacing:-1.4px;font-weight:800;color:var(--ink);margin:0;text-wrap:balance;max-width:15ch}
+  @media(max-width:660px){ .opener{grid-template-columns:1fr;gap:14px} }
+
+  .intro{max-width:62ch}
+  .intro p:first-child{font-size:16.5px}
+
+  .cols{display:grid;grid-template-columns:208px 1fr;gap:42px;align-items:start;margin-top:6px}
+  @media(max-width:660px){ .cols{grid-template-columns:1fr;gap:22px} }
+  .aside{font-size:13px;line-height:1.45}
+  .aside .ahead{font-size:13.5px;font-weight:800;color:var(--ink);padding-bottom:9px;margin-bottom:13px;border-bottom:1px solid var(--line);line-height:1.3}
+  .aside ul{list-style:none;padding:0;margin:0}
+  .aside li{margin-bottom:13px}
+  .aside li b{display:block;color:var(--ink);font-weight:800;margin-bottom:2px}
+  .aside .toc li{display:flex;gap:10px;margin-bottom:11px;align-items:baseline}
+  .aside .toc .n{color:var(--lime-deep);font-weight:800;font-size:12px}
+  .stat{background:var(--ink);color:#fff;border-radius:8px;padding:16px 17px;margin-bottom:14px}
+  .stat .big{font-size:30px;font-weight:800;color:var(--lime);line-height:1;letter-spacing:-1px;margin-bottom:6px}
+  .stat p{font-size:12px;margin:0;color:#d4d4d8}
+  .stat cite{display:block;margin-top:8px;font-size:10.5px;color:var(--muted);font-style:normal}
+  .casebox{background:#fafafa;border-left:3px solid var(--lime);padding:13px 15px;border-radius:0 4px 4px 0;margin-bottom:16px}
+  .casebox .lbl{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .casebox b{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
+  .casebox p{font-size:12.5px;margin:0;color:var(--body)}
+
+  h3.sub{font-size:17px;font-weight:800;color:var(--ink);margin:24px 0 9px;letter-spacing:-.2px}
+  .numhead{display:flex;align-items:center;gap:11px;margin:26px 0 10px}
+  .num{flex:0 0 auto;width:27px;height:27px;border-radius:100px;background:var(--lime);color:var(--ink);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .numhead h3{margin:0;font-size:16.5px;font-weight:800;color:var(--ink)}
+
+  ul.dash{list-style:none;padding:0;margin:6px 0 15px}
+  ul.dash li{position:relative;padding-left:19px;margin-bottom:7px;font-size:15px;max-width:62ch}
+  ul.dash li::before{content:"–";position:absolute;left:0;color:var(--lime-deep);font-weight:800}
+  ul.dash li strong{color:var(--ink)}
+
+  .check{list-style:none;padding:0;margin:8px 0 16px}
+  .check li{display:flex;gap:12px;align-items:flex-start;margin-bottom:11px;font-size:15px;max-width:60ch}
+  .check .box{flex:0 0 auto;width:19px;height:19px;border:2px solid var(--ink);border-radius:4px;margin-top:1px}
+  .result{background:var(--ink);color:#fff;border-radius:8px;padding:18px 20px;margin-top:6px}
+  .result p{color:#e4e4e7;margin:0;max-width:none;font-size:14.5px}
+  .result strong{color:var(--lime)}
+
+  .vnote{border:1px dashed var(--lime-deep);background:rgba(203,251,69,.10);border-radius:6px;padding:10px 13px;margin:16px 0 2px;font-size:12px;color:#5a5a30;display:flex;gap:8px;align-items:flex-start}
+  .vnote b{color:#404020;font-weight:800;letter-spacing:.4px}
+
+  .foot{margin-top:auto;padding-top:28px;display:flex;justify-content:space-between;align-items:flex-end;font-size:10.5px;color:var(--muted);line-height:1.3}
+  .foot .pg{font-size:13px;font-weight:800;color:var(--ink)}
+
+  .about{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);max-width:62ch}
+  .about b{color:var(--ink);display:block;margin-bottom:6px;letter-spacing:.4px;text-transform:uppercase}
+  .ctarow{display:flex;gap:11px;flex-wrap:wrap;margin:20px 0 4px}
+  .btn{display:inline-block;font-weight:800;font-size:14px;padding:12px 20px;border-radius:6px;background:var(--lime);color:var(--ink);border:none}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .draft{font-size:11px;color:var(--muted);text-align:center;max-width:780px;margin:2px auto 0}
+  .sources{font-size:10.5px;color:var(--muted);margin-top:10px;max-width:62ch}
+</style>
+</head>
+<body>
+
+
+<div class="viewer">
+
+  <!-- ===== COVER ===== -->
+  <section class="page cover">
+    <div class="wm"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="tag">eBook</span></div>
+    <h1>La era de la gestión inteligente de acuerdos</h1>
+    <p class="sub">Cómo los líderes latinoamericanos están eliminando la burocracia operativa y acelerando el crecimiento.</p>
+    <div class="countries"><span>México</span><span>Colombia</span><span>Chile</span><span>Argentina</span></div>
+    <div class="dl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></div>
+  </section>
+
+  <!-- ===== INTRO ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Introducción</span></div>
+    <div class="cols">
+      <aside class="aside">
+        <div class="ahead">En esta guía</div>
+        <ul class="toc">
+          <li><span class="n">01</span><span>El costo oculto de la fricción operativa</span></li>
+          <li><span class="n">02</span><span>De la firma electrónica a Docusign IAM</span></li>
+          <li><span class="n">03</span><span>Análisis por país: eficiencia y legalidad</span></li>
+          <li><span class="n">04</span><span>Casos de uso prácticos</span></li>
+          <li><span class="n">05</span><span>Checklist de madurez operativa</span></li>
+        </ul>
+      </aside>
+      <div class="intro">
+        <p>Para las organizaciones latinoamericanas, la transformación digital dejó de ser una aspiración para convertirse en una condición de supervivencia. <strong>Sin embargo, existe una brecha silenciosa entre digitalizar tareas aisladas y orquestar procesos completos de principio a fin</strong>, y es justamente en esa brecha donde se esconde la mayor pérdida de tiempo, talento y oportunidades de negocio.</p>
+        <p>Hoy, una buena parte de las empresas de México, Colombia, Chile y Argentina conviven con flujos híbridos que mezclan lo digital y lo analógico: se imprime para firmar, se escanea para archivar y se vuelve a teclear la misma información en cada sistema. Así pues, aunque exista tecnología de por medio, el proceso sigue siendo lento, manual y propenso a errores.</p>
+        <p>Y el costo de esa fricción no es menor. Según el estudio <a href="https://www.docusign.com/blog/deloitte-research-costly-problems-agreement-process">“Unlocking the Value of Agreement Management”, de Deloitte y Docusign</a>, la mala gestión de acuerdos destruye cerca de <strong>dos billones de dólares —millones de millones— en valor económico cada año</strong> a nivel mundial. Detrás de esa cifra hay procesos cotidianos que, simplemente, tardan más de lo que deberían.</p>
+        <p>Por eso, esta guía aborda la eficiencia operativa desde un enfoque práctico, recorriendo un camino claro: <strong>primero veremos dónde se origina la fricción; luego, cómo eliminarla con Docusign IAM; después, qué cambia en cada país de la región; y, por último, cómo se ve todo esto en la operación diaria</strong>. Empecemos, entonces, por entender de dónde viene exactamente esa pérdida.</p>
+      </div>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">2</span></div>
+  </section>
+
+  <!-- ===== CAP 1 ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Capítulo 01 · El problema</span></div>
+    <div class="opener">
+      <div class="rail"><span class="capnum">01</span></div>
+      <h2>El costo oculto de la fricción operativa</h2>
+    </div>
+    <div class="cols">
+      <aside class="aside">
+        <div class="stat">
+          <div class="big">9,2%</div>
+          <p>de los ingresos anuales pierde la empresa promedio por una gestión deficiente de contratos.</p>
+          <cite>World Commerce &amp; Contracting</cite>
+        </div>
+        <div class="stat">
+          <div class="big">+55 mil M</div>
+          <p>de horas se desperdician al año en el mundo gestionando acuerdos.</p>
+          <cite>Deloitte y Docusign</cite>
+        </div>
+      </aside>
+      <div>
+        <p>Cuando hablamos de ineficiencia operativa, solemos imaginar grandes fallas. No obstante, <strong>el costo más alto rara vez es visible: se acumula gota a gota en cada reenvío de correo, en cada documento que espera una firma y en cada dato que alguien transcribe a mano</strong> de un sistema a otro.</p>
+        <p>Conviene aclarar un punto que cambia por completo el diagnóstico: el problema casi nunca está en la firma en sí. El cuello de botella vive en el “antes” y en el “después”. Antes de firmar, hay que recopilar datos, validar la identidad de las partes y preparar el documento. Después, hay que actualizar el ERP, notificar a las áreas y activar el siguiente paso.</p>
+        <p>Los números confirman esta intuición. El mismo estudio de Deloitte y Docusign estima que las empresas destinan un 18% adicional de su tiempo a gestionar acuerdos —<strong>más de 55.000 millones de horas desperdiciadas cada año en el mundo</strong>— y que un acuerdo puede pasar por quince o más traspasos internos antes siquiera de llegar a la otra parte.</p>
+        <p>Pensemos en un caso cotidiano: un contrato de venta puede firmarse en minutos, pero a su alrededor orbita una constelación de microtareas invisibles —copiar los datos del cliente, revisarlos, recargarlos en facturación, archivar el documento—. De este modo, lo que debería tomar minutos termina extendiéndose por días.</p>
+        <p>En este sentido, muchas empresas adoptaron la firma electrónica como una isla, <strong>una firma “atrapada”, desconectada del resto de sus sistemas</strong>. Resuelve un eslabón, sí, pero deja intacta la cadena de tareas manuales que la rodean. Sus efectos son concretos y medibles:</p>
+        <ul class="dash">
+          <li><strong>Ciclos de venta prolongados,</strong> porque cada contrato espera días para formalizarse y el ingreso se posterga.</li>
+          <li><strong>Pérdida de talento,</strong> ya que los mejores candidatos aceptan otra oferta antes de que llegue su contrato.</li>
+          <li><strong>Relaciones con clientes que se deterioran,</strong> un riesgo que el 48% de las empresas del estudio reconoce haber sufrido por las demoras.</li>
+          <li><strong>Fricciones en la cadena de suministro,</strong> cuando la aprobación de un proveedor se demora y la operación se detiene.</li>
+        </ul>
+        <p>En una región tan dinámica como la latinoamericana, donde la velocidad suele definir quién gana cada operación, esa fuga pesa todavía más. La buena noticia es que es, en gran medida, evitable mediante la <a href="https://www.docusign.com/es-mx/blog/automatizacion-de-procesos">automatización de procesos</a>. Pero para resolverla de raíz, primero hay que entender por qué la firma electrónica, por sí sola, no alcanza. A eso dedicamos el próximo capítulo.</p>
+        <div class="vnote"><span>◭</span><div><b>VISUAL</b> — Línea de tiempo de un acuerdo con los puntos muertos (antes / firma / después); destacar el dato de 9,2% de ingresos.</div></div>
+      </div>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">3</span></div>
+  </section>
+
+  <!-- ===== CAP 2 ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Capítulo 02 · La solución</span></div>
+    <div class="opener">
+      <div class="rail"><span class="capnum">02</span></div>
+      <h2>De la firma electrónica a la orquestación con Docusign IAM</h2>
+    </div>
+    <div class="cols">
+      <aside class="aside">
+        <div class="ahead">La plataforma en 4 piezas</div>
+        <ul>
+          <li><b><a href="https://www.docusign.com/es-mx/productos/plataforma/maestro">Maestro</a></b>Flujos de trabajo personalizados, sin código.</li>
+          <li><b><a href="https://www.docusign.com/es-mx/productos/plataforma/navigator">Navigator</a></b>Repositorio que analiza acuerdos y revela vencimientos y obligaciones.</li>
+          <li><b><a href="https://www.docusign.com/es-mx/productos/plataforma/app-center">App Center</a></b>Integraciones con los sistemas que ya usas.</li>
+          <li><b><a href="https://www.docusign.com/es-mx/productos/plataforma/ia">Iris</a></b>El motor de IA que convierte datos en insights accionables.</li>
+        </ul>
+      </aside>
+      <div>
+        <p>Si el problema, como vimos, no está en la firma sino en todo lo que la rodea, la solución no puede limitarse a firmar más rápido. La firma electrónica fue el primer paso, y un paso enorme. <strong>Pero la verdadera eficiencia proviene de orquestar todo el proceso del acuerdo en un único flujo continuo</strong>. Ese salto conceptual tiene nombre: gestión inteligente de acuerdos, o IAM (Intelligent Agreement Management).</p>
+        <p>Así como el CRM organizó la relación con los clientes y se volvió una categoría imprescindible, IAM hace lo propio con los acuerdos. Es importante aclarar que IAM no reemplaza a la <a href="https://www.docusign.com/es-mx/blog/gestion-del-ciclo-de-vida-de-contratos">gestión del ciclo de vida de contratos</a>: al contrario, la incorpora como una pieza fundamental dentro de una plataforma mucho más amplia e inteligente.</p>
+        <p>¿Y por qué importa esta distinción en la práctica? Porque al liberar los datos que hoy quedan “bloqueados” dentro de los documentos, cada acuerdo deja de ser un papel suelto y se convierte en <strong>información viva que alimenta decisiones y dispara procesos</strong>. Esa es la diferencia entre digitalizar y gestionar de forma inteligente.</p>
+        <p>Con <a href="https://www.docusign.com/es-mx/intelligent-agreement-management">Docusign IAM</a>, las áreas pueden <strong>crear flujos de trabajo sin escribir una sola línea de código</strong>: la recopilación de datos, la verificación de identidad y la firma dejan de ser etapas sueltas para convertirse en un proceso fluido, automático y visible de punta a punta.</p>
+        <p>El resultado es el fin de la reelaboración, y es justo aquí donde muchas iniciativas digitales se quedan a mitad de camino: de nada sirve automatizar la firma si luego hay que volver a teclear todo en otra herramienta. <strong>Con más de mil integraciones —entre ellas Salesforce, SAP y Microsoft—, App Center conecta los acuerdos con los sistemas que el equipo ya domina</strong>, de modo que los datos fluyen solos y nadie tiene que ser el “puente humano” entre una plataforma y otra. Puedes ver cómo <a href="https://www.docusign.com/es-mx/blog/automatizar-procesos-contractuales">automatizar tus procesos contractuales</a> paso a paso.</p>
+        <p>Ahora bien, esta orquestación no ocurre en el vacío. <strong>Cada país de la región la implementa sobre su propio marco legal y su propio nivel de madurez digital</strong>, y conocer esas diferencias es lo que permite ganar autoridad y eficiencia en cada mercado. Veámoslo país por país.</p>
+        <div class="vnote"><span>◭</span><div><b>VISUAL</b> — Diagrama “sin código”: Datos → Verificación de identidad → Firma → Integración con ERP/CRM, frente al modelo antiguo de pasos desconectados.</div></div>
+      </div>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">4</span></div>
+  </section>
+
+  <!-- ===== CAP 3 PAÍSES ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Capítulo 03 · La región</span></div>
+    <div class="opener">
+      <div class="rail"><span class="capnum">03</span></div>
+      <h2>Análisis por país: eficiencia y legalidad en la región</h2>
+    </div>
+    <div class="cols">
+      <aside class="aside">
+        <div class="ahead">Marco legal de referencia</div>
+        <ul>
+          <li><b>México</b>NOM-151 · conservación de mensajes de datos</li>
+          <li><b>Colombia</b>Ley 527 de 1999 · comercio electrónico</li>
+          <li><b>Chile</b>Ley 19.799 · documentos y firma electrónica</li>
+          <li><b>Argentina</b>Foco en simplificar flujos internos</li>
+        </ul>
+      </aside>
+      <div>
+        <p>La eficiencia no se construye igual en todos los mercados, porque cada país combina su propia madurez digital con su propio marco normativo. A continuación, una descripción ejecutiva de cómo se gestiona la eficiencia y la legalidad de la firma electrónica en los cuatro mercados clave de la región.</p>
+
+        <h3 class="sub">México · agilidad comercial</h3>
+        <p>Aquí el foco está en acelerar los contratos de venta para acortar el tiempo entre el “sí” del cliente y el ingreso efectivo. En el plano legal, la referencia es la <strong><a href="https://www.docusign.com/es-mx/blog/nom-151">NOM-151</a></strong>, que regula la conservación de mensajes de datos y la digitalización de documentos. En la práctica, esto permite cerrar poderes, contratos y altas de clientes con <a href="https://www.docusign.com/products/electronic-signature/legality/mexico">plena validez legal en México</a>, sin envío físico ni presencia de las partes en un mismo lugar.</p>
+
+        <h3 class="sub">Colombia · compras y talento</h3>
+        <p>La eficiencia se juega en la aceleración de los procesos de compras y de recursos humanos. <strong>El soporte legal lo aporta la Ley 527 de 1999</strong>, que reconoce la validez del comercio electrónico y de las firmas digitales: el reclutamiento de un colaborador o el alta de un proveedor pueden completarse de extremo a extremo en horas, con el <a href="https://www.docusign.com/products/electronic-signature/legality/colombia">respaldo legal de la firma electrónica en Colombia</a>.</p>
+
+        <h3 class="sub">Chile · ultraeficiencia</h3>
+        <p>Es el mercado más digitalizado del bloque, así que la conversación ya no es si digitalizar, sino cómo alcanzar la ultraeficiencia mediante la automatización avanzada. <strong>Su marco es la Ley 19.799</strong>, que da <a href="https://www.docusign.com/products/electronic-signature/legality/chile">plena validez legal a la firma electrónica en Chile</a>. El diferencial ya no es adoptar la firma, sino encadenarla con el resto de los sistemas para que un acuerdo dispare por sí solo la siguiente acción.</p>
+
+        <h3 class="sub">Argentina · adaptabilidad</h3>
+        <p>La prioridad es la agilidad operativa extrema y la capacidad de adaptarse rápido a un mercado cambiante, lo que vuelve clave <strong>la simplificación de los flujos de trabajo internos</strong>, siempre sobre la base de la <a href="https://www.docusign.com/products/electronic-signature/legality/argentina">validez legal de la firma electrónica en Argentina</a>. Cuando el entorno obliga a reaccionar rápido, los procesos internos no pueden ser el ancla.</p>
+
+        <p>Con el marco legal claro, queda la pregunta más importante para cualquier líder operativo: <strong>¿cómo se ve todo esto en la operación diaria?</strong> Para responderla, bajemos de los conceptos a los hechos.</p>
+        <div class="vnote"><span>◭</span><div><b>VISUAL</b> — Mapa de Latinoamérica con los 4 países; en cada uno, un “pin” con su ley clave y su foco de eficiencia.</div></div>
+      </div>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">5</span></div>
+  </section>
+
+  <!-- ===== CAP 4 CASOS ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Capítulo 04 · La prueba</span></div>
+    <div class="opener">
+      <div class="rail"><span class="capnum">04</span></div>
+      <h2>Casos de uso: donde la eficiencia se hace realidad</h2>
+    </div>
+    <div class="cols">
+      <aside class="aside">
+        <div class="casebox"><div class="lbl">Ejemplo · Ventas</div><b>Edenred México</b><p>De formalizar contratos en 5 días a hacerlo en apenas 2 horas.</p></div>
+        <div class="casebox"><div class="lbl">Ejemplo · RR. HH.</div><b>Novo Nordisk</b><p>Su equipo legal redujo la aprobación y firma de 30 días a algunas horas.</p></div>
+        <div class="casebox"><div class="lbl">Ejemplo · Compras</div><b>Bain &amp; Company</b><p>Las compras estructuradas reducen costos entre 8% y 12%.</p></div>
+      </aside>
+      <div>
+        <p>La gestión inteligente de acuerdos demuestra su verdadero valor cuando la observamos en la operación, no en la teoría. Veamos tres áreas en las que el impacto es inmediato y, en cada una, una empresa de la región que ya lo vive.</p>
+
+        <div class="numhead"><span class="num">1</span><h3>Ventas: acortar el tiempo hasta el ingreso (time-to-revenue)</h3></div>
+        <p>Imagina el recorrido ideal: el vendedor cierra el trato en el CRM, el flujo de Maestro genera el contrato automáticamente, valida la identidad del cliente y, una vez firmado, dispara la facturación sin intervención manual. <strong>El acuerdo deja de ser un trámite y se convierte en parte del propio motor de ingresos.</strong></p>
+        <p><a href="https://www.docusign.com/es-mx/casos-de-clientes/edenred-mexico">Edenred México</a> pasó de cinco días a dos horas. Esa velocidad no solo agiliza una venta: multiplica los negocios que el equipo cierra en el mismo período, y ahí el tiempo ahorrado se vuelve capacidad real de escalar.</p>
+
+        <div class="numhead"><span class="num">2</span><h3>Recursos Humanos: onboarding a gran escala</h3></div>
+        <p>Permite <strong>automatizar la incorporación de empleados a gran escala</strong>, con paquetes de contratación personalizados que mejoran la experiencia del candidato desde el primer día y evitan que el mejor talento se pierda por la lentitud del papeleo.</p>
+        <p>El caso de <a href="https://www.docusign.com/es-mx/casos-de-clientes/novo-nordisk">Novo Nordisk</a>, que inspira a otros mercados en Latinoamérica, lo ilustra bien: su equipo legal redujo la aprobación y firma de documentos de un promedio de 30 días a tan solo algunas horas.</p>
+
+        <div class="numhead"><span class="num">3</span><h3>Compras: aprobar sin frenar la operación</h3></div>
+        <p>Agilizar la aprobación de proveedores es la diferencia entre una operación que fluye y una que se detiene por falta de insumos. <strong>Cuando la validación, la firma y el registro ocurren en un mismo flujo, el abastecimiento deja de ser un riesgo.</strong> Un análisis de Bain &amp; Company sobre más de mil proyectos concluyó que las compras estructuradas reducen costos entre 8% y 12%: ordenar el flujo de los acuerdos también ordena el gasto.</p>
+        <p>Los tres escenarios comparten una misma lógica: la eficiencia no nace de hacer la tarea más rápido, sino de eliminar las tareas intermedias que nadie debería tener que hacer. Más historias en los <a href="https://www.docusign.com/es-mx/blog/casos-de-exito">casos de éxito de Docusign México</a>. Y si te preguntas en qué punto está tu empresa, el siguiente ejercicio te lo dirá en un minuto.</p>
+      </div>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">6</span></div>
+  </section>
+
+  <!-- ===== CAP 5 CHECKLIST ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Capítulo 05 · Autodiagnóstico</span></div>
+    <div class="opener">
+      <div class="rail"><span class="capnum">05</span></div>
+      <h2>¿Qué tan eficiente es tu empresa?</h2>
+    </div>
+    <div class="cols">
+      <aside class="aside">
+        <div class="ahead">Cómo leer tu resultado</div>
+        <ul>
+          <li><b>0–2 casillas</b>Operación eficiente: tus acuerdos ya fluyen entre sistemas.</li>
+          <li><b>3–4 casillas</b>En transición: hay procesos clave todavía atados a tareas manuales.</li>
+          <li><b>5–6 casillas</b>Pérdida silenciosa: cada flujo manual frena tu crecimiento.</li>
+        </ul>
+      </aside>
+      <div>
+        <p>No necesitas una auditoría para diagnosticar tu operación. Lee cada afirmación pensando en cómo trabaja hoy tu empresa y <strong>marca la casilla cuando la respuesta sea “Sí”</strong>. Al final, cuenta cuántas marcaste.</p>
+        <ul class="check">
+          <li><span class="box"></span>Extraemos manualmente los datos de un contrato para cargarlos en otro sistema.</li>
+          <li><span class="box"></span>Después de firmar un acuerdo, alguien tiene que actualizar el ERP o el CRM “a mano”.</li>
+          <li><span class="box"></span>Nuestros sistemas dejan de comunicarse entre sí una vez que el documento queda firmado.</li>
+          <li><span class="box"></span>Solemos imprimir, firmar y escanear documentos para completar un proceso.</li>
+          <li><span class="box"></span>Buscar un contrato archivado y revisar su vencimiento nos toma más de unos minutos.</li>
+          <li><span class="box"></span>Nuestra firma electrónica funciona aislada, sin conectarse con las demás herramientas.</li>
+        </ul>
+        <div class="result"><p>Si marcaste la mayoría de las casillas, <strong>tu empresa está sufriendo una pérdida silenciosa de valor y de tiempo</strong>. La buena noticia: cada casilla marcada es una oportunidad concreta de mejora al alcance de la mano.</p></div>
+      </div>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">7</span></div>
+  </section>
+
+  <!-- ===== CIERRE ===== -->
+  <section class="page">
+    <div class="topbar"><span class="wordmark">Docusign<span class="reg">®</span></span><span class="eyebrow">Para concluir</span></div>
+    <div class="opener">
+      <div class="rail"><span class="cap">¡Hemos<br>finalizado!</span></div>
+      <h2>El tiempo recuperado, convertido en crecimiento</h2>
+    </div>
+    <div class="intro">
+      <p>Recorrimos un camino claro: dónde nace la fricción y cuánto cuesta, cómo Docusign IAM la elimina orquestando todo el proceso, qué cambia en cada país y cómo se traduce en resultados para ventas, recursos humanos y compras. <strong>El hilo que une todo es uno solo: la eficiencia operativa ya no es un proyecto de tecnología, sino una decisión de negocio.</strong></p>
+      <p>Las empresas que dan este paso no solo trabajan más rápido: trabajan de manera más inteligente y con menos riesgos, ganando la capacidad de escalar sin multiplicar su carga operativa. En una región donde la agilidad define quién lidera, esa diferencia es, con frecuencia, la que separa a quien sigue el ritmo del mercado de quien lo marca.</p>
+      <p>Si quieres seguir profundizando, Docusign ofrece una guía completa sobre cómo <a href="https://www.docusign.com/es-mx/recursos/guias/gestion-contratos-ia">maximizar la eficiencia de la gestión de contratos con IA</a>. Pero, ¿quieres descubrir cuánto tiempo y cuánto crecimiento podría desbloquear tu empresa?</p>
+      <div class="ctarow">
+        <a class="btn" href="https://www.docusign.com/es-mx/contacto-ventas">Hablar con un especialista</a>
+        <a class="btn ghost" href="https://trial.docusign.com/es-MX">Probar gratis</a>
+      </div>
+      <div class="about">
+        <b>Acerca de Docusign</b>
+        Docusign es líder mundial en gestión inteligente de acuerdos. Su plataforma permite crear, formalizar y gestionar acuerdos de forma totalmente digital, segura y legal. Más de 1,5 millones de clientes y más de mil millones de personas en más de 180 países usan Docusign para acelerar sus negocios y simplificar la vida de las personas.
+        <br><br>
+        <a href="https://www.docusign.com/es-mx/recursos">docusign.com/es-mx/recursos</a> · contactomx@docusign.com
+      </div>
+      <p class="sources">Fuentes citadas: Deloitte y Docusign, “Unlocking the Value of Agreement Management”; World Commerce &amp; Contracting; Bain &amp; Company.</p>
+    </div>
+    <div class="foot"><span>La era de la gestión inteligente de acuerdos</span><span class="pg">8</span></div>
+  </section>
+
+</div>
+<p class="draft">Maqueta de referencia visual · contenido provisorio (casos de éxito sujetos a confirmación del cliente) · tipografía aproximada (el visor no permite cargar la fuente de marca) · diseño final a cargo de diagramación.</p>
+
+</body>
+</html>
